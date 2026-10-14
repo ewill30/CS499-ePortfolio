@@ -1,0 +1,32 @@
+[
+  {
+    "code": "GALR210214",
+    "name": "Gale Reef",
+    "length": "4 nights / 5 days",
+    "start": "2026-08-15",
+    "resort": "Emerald Bay, 3 stars",
+    "perPerson": 799.00,
+    "image": "reef1.jpg",
+    "description": "Enjoy a relaxing tropical getaway at Gale Reef."
+  },
+  {
+    "code": "DAWR210315",
+    "name": "Dawson Reef",
+    "length": "4 nights / 5 days",
+    "start": "2026-09-15",
+    "resort": "Blue Lagoon, 4 stars",
+    "perPerson": 899.00,
+    "image": "reef2.jpg",
+    "description": "Explore beautiful beaches and clear water at Dawson Reef."
+  },
+  {
+    "code": "CLAR210415",
+    "name": "Claire's Reef",
+    "length": "4 nights / 5 days",
+    "start": "2026-10-15",
+    "resort": "Coral Sands, 5 stars",
+    "perPerson": 999.00,
+    "image": "reef3.jpg",
+    "description": "Experience an unforgettable island vacation at Claire's Reef."
+  }
+]

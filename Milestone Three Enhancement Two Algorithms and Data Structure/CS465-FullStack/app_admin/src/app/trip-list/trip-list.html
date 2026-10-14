@@ -1,0 +1,93 @@
+<div class="container mt-4">
+
+  <!-- Page header and add trip button -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Travlr Getaways</h1>
+
+    <button
+      class="btn btn-success"
+      type="button"
+      routerLink="/add-trip"
+    >
+      Add Trip
+    </button>
+  </div>
+
+  <h2 class="mb-3">Trip Listing</h2>
+
+  <!-- Search, filter, and sorting controls -->
+  <div class="card p-3 mb-4">
+    <div class="row">
+
+      <!-- Search trips by name, code, or resort -->
+      <div class="col-md-4 mb-2">
+        <label class="form-label">Search Trips</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search name, code, or resort"
+          [(ngModel)]="searchTerm"
+          (input)="applyFilters()"
+        >
+      </div>
+
+      <!-- Filter trips by maximum price -->
+      <div class="col-md-3 mb-2">
+        <label class="form-label">Maximum Price</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Maximum price"
+          [(ngModel)]="maxPrice"
+          (input)="applyFilters()"
+        >
+      </div>
+
+      <!-- Select how trips should be sorted -->
+      <div class="col-md-3 mb-2">
+        <label class="form-label">Sort Trips</label>
+        <select
+          class="form-select"
+          [(ngModel)]="sortOption"
+          (change)="applyFilters()"
+        >
+          <option value="name">Name</option>
+          <option value="priceLow">Price: Low to High</option>
+          <option value="priceHigh">Price: High to Low</option>
+          <option value="date">Start Date</option>
+        </select>
+      </div>
+
+      <!-- Reset all search, filter, and sorting options -->
+      <div class="col-md-2 mb-2 d-flex align-items-end">
+        <button
+          class="btn btn-secondary w-100"
+          type="button"
+          (click)="resetFilters()"
+        >
+          Reset
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Message shown when no trips match the search or filters -->
+  <div
+    class="alert alert-info"
+    *ngIf="filteredTrips.length === 0"
+  >
+    No trips match the selected search or filters.
+  </div>
+
+  <!-- Display the filtered and sorted trip results -->
+  <div class="row">
+    <div
+      class="col-md-4 mb-4"
+      *ngFor="let trip of filteredTrips"
+    >
+      <app-trip-card [trip]="trip"></app-trip-card>
+    </div>
+  </div>
+
+</div>
